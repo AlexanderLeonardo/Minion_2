@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/bg_layer1.png" type="Texture" id=1]
 [ext_resource path="res://assets/ground_grass_small.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.3302, 15.8361 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 102.918, 65.4192 )
 
 [node name="Tiles" type="Node2D"]
 
@@ -17,22 +11,8 @@ scale = Vector2( 0.011633, 0.0124162 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 50, 0, 32, 32 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
-position = Vector2( 0, 63.1328 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
-position = Vector2( -0.398376, -1.66504 )
-shape = SubResource( 1 )
-
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 90.3422, 2.73783 )
-scale = Vector2( 0.0873914, 0.13074 )
+position = Vector2( 76.7501, 3.15392 )
+scale = Vector2( 0.114992, 0.188992 )
 texture = ExtResource( 2 )
 region_rect = Rect2( 84, 47.4737, 33.0526, 29.5263 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
-position = Vector2( 3.61098, 0 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
-position = Vector2( 0.509583, -0.0466537 )
-shape = SubResource( 2 )

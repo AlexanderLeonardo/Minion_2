@@ -8,7 +8,7 @@ func _control(delta):
 		rot_dir += 1
 	if Input.is_action_pressed("ui_left"):
 		rot_dir -= 1
-		
+	
 	rotation += rotation_speed * rot_dir * delta
 	velocity = Vector2()
 	
