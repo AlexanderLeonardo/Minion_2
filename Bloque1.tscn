@@ -6,6 +6,9 @@
 extents = Vector2( 19.1414, 17.7065 )
 
 [node name="Bloque1" type="Area2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="bloque1" type="Sprite" parent="."]
 position = Vector2( 417.724, 283.393 )

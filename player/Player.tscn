@@ -4,17 +4,20 @@
 [ext_resource path="res://assets/circuloRojo.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.7579, 9.78821 )
+extents = Vector2( 29.4898, 20.8019 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 9.06915, 10.883 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 219.794, 109.895 )
-scale = Vector2( 0.0828397, 0.0733867 )
+position = Vector2( 203.278, 90.4525 )
+scale = Vector2( 0.19248, 0.153294 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 219.306, 109.205 )
+position = Vector2( 203.836, 91.644 )
 shape = SubResource( 1 )
