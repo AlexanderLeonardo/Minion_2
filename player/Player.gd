@@ -13,8 +13,8 @@ func _control(delta):
 	velocity = Vector2()
 	
 	if Input.is_action_pressed("ui_up"):
-		velocity = Vector2(speed, 0).rotated(rotation)
+		velocity = Vector2(speed, 1).rotated(rotation)
 	if Input.is_action_pressed("ui_down"):
-		velocity = Vector2(-speed/2, 0).rotated(rotation)
+		velocity = Vector2(-speed/2, 1).rotated(rotation)
 
 
