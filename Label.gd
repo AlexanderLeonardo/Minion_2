@@ -9,4 +9,6 @@ func _ready():
 	set_physics_process(true)
 	
 func _physics_process(delta):
-	set_text(str(get_node("../cronometro").get_time_left()))
+	var minutos = int(get_node("../cronometro").get_time_left() / 60)
+	var segundos = int(get_node("../cronometro").get_time_left()) % 60
+	set_text(str(minutos) + ":" + str(segundos))
