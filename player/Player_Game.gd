@@ -10,8 +10,11 @@ var velocity = Vector2()
 var can_shoot = true
 var alive = true
 
+var tileMap
+
 func _ready():
 	# GunTimer.wait_time = gun_cooldown
+	
 	pass
 	
 func _control(delta):
@@ -19,7 +22,44 @@ func _control(delta):
 	
 	
 func _physics_process(delta):
-	if not alive:
-		return
-	_control(delta)
-	move_and_slide(velocity)
+#	if not alive:
+#		return
+#	_control(delta)
+#	move_and_slide(velocity)
+	var sizeCellX = tileMap.cell_size.x
+	var sizeCellY = tileMap.cell_size.y
+	
+	moverHotizontal("ui_right", sizeCellX, puedeMoverDer(Vector2(sizeCellX * 6 , sizeCellX * 7)))
+	moverHotizontal("ui_left", -sizeCellX, puedeMoverIzq(Vector2(sizeCellX, sizeCellX * 2)))
+	
+	moverVertical("ui_up", -sizeCellY, puedeMoverArriba(Vector2(sizeCellY, sizeCellY * 2)))
+	moverVertical("ui_down", sizeCellY, puedeMoverAbajo(Vector2(sizeCellY * 6, sizeCellY * 7)))
+	
+	
+func moverHotizontal(direccion, salto, limite):
+	if Input.is_action_just_pressed(direccion) and limite:
+		position.x += salto
+
+func moverVertical(direccion, salto, limite):
+	if Input.is_action_just_pressed(direccion) and limite:
+		position.y += salto
+		
+func puedeMoverIzq(rango):
+	if position.x > rango.x and position.x < rango.y:
+		return false
+	else: return true
+
+func puedeMoverDer(rango):
+	if position.x > rango.x and position.x < rango.y:
+		return false
+	else: return true
+
+func puedeMoverAbajo(rango):
+	if position.y > rango.x and position.y < rango.y:
+		return false
+	else: return true
+	
+func puedeMoverArriba(rango):
+	if position.y > rango.x and position.y < rango.y:
+		return false
+	else: return true
