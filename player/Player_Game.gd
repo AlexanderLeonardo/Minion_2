@@ -39,10 +39,12 @@ func _physics_process(delta):
 func moverHotizontal(direccion, salto, limite):
 	if Input.is_action_just_pressed(direccion) and limite:
 		position.x += salto
+		global._on_bronze()
 
 func moverVertical(direccion, salto, limite):
 	if Input.is_action_just_pressed(direccion) and limite:
 		position.y += salto
+		global._on_bronze()
 		
 func puedeMoverIzq(rango):
 	if position.x > rango.x and position.x < rango.y:

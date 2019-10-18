@@ -8,5 +8,5 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_bronze():
-	score += 500
+	#score -= 1
 	emit_signal("bronze", score)
