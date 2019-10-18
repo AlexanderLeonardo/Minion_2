@@ -22,10 +22,7 @@ format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 1, 0, 2, 0, 0, 3, 1, 0, 4, 0, 0, 5, 1, 0, 6, 0, 0, 7, 1, 0, 65536, 1, 0, 65543, 0, 0, 131072, 0, 0, 131079, 1, 0, 196608, 1, 0, 196615, 0, 0, 262144, 0, 0, 262151, 1, 0, 327680, 1, 0, 327687, 0, 0, 393216, 0, 0, 393223, 1, 0, 458752, 1, 0, 458753, 0, 0, 458754, 1, 0, 458755, 0, 0, 458756, 1, 0, 458757, 0, 0, 458758, 1, 0, 458759, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 13.859, 105.483 )
-speed = 200
-rotation_speed = 1.0
-health = 200
+position = Vector2( 136.991, 339.054 )
 
 [node name="Item1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 82.5367, 148.05 )
