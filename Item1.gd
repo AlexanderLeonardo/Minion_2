@@ -6,5 +6,5 @@ func _ready():
 
 func _on_Item1_body_entered(body):
 	if body.get_name() == "Player":
-		global._on_bronze()
+		global._on_reload()
 		queue_free()
