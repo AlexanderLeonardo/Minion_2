@@ -17,6 +17,7 @@ script = ExtResource( 1 )
 position = Vector2( 167.047, 117.352 )
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 1, 0 )
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 116, 74 )
 format = 1
@@ -45,6 +46,6 @@ margin_bottom = 5.07004
 theme = ExtResource( 7 )
 
 [node name="Bloque1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 291.084, 135.946 )
+position = Vector2( 400, 259 )
 script = ExtResource( 9 )
 [connection signal="body_entered" from="Bloque1" to="Bloque1" method="_on_Bloque1_body_entered"]

@@ -12,8 +12,11 @@ func _on_Bloque1_body_entered(body):
 	if body.get_name() == "Player":
 		queue_free()
 	var bloque_corrido = bloque_nuevo.instance()
-	pos_nueva_x = randi() % 400 + 1
-	pos_nueva_y = randi() % 250 + 1
+	# getPosition Body
+	
+	pos_nueva_x = body.position.x + 116
+	pos_nueva_y = 259
+	# update new position
 	bloque_corrido.move_local_x(pos_nueva_x)
 	bloque_corrido.move_local_y(pos_nueva_y)
 	get_parent().add_child(bloque_corrido)
