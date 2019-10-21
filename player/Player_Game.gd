@@ -10,7 +10,9 @@ var velocity = Vector2()
 var can_shoot = true
 var alive = true
 
+var level_1
 var tileMap
+var puedeMover = true
 
 func _ready():
 	# GunTimer.wait_time = gun_cooldown
@@ -37,12 +39,12 @@ func _physics_process(delta):
 	
 	
 func moverHotizontal(direccion, salto, limite):
-	if Input.is_action_just_pressed(direccion) and limite:
+	if Input.is_action_just_pressed(direccion) and limite and puedeMover:
 		position.x += salto
 		global._on_bronze()
 
 func moverVertical(direccion, salto, limite):
-	if Input.is_action_just_pressed(direccion) and limite:
+	if Input.is_action_just_pressed(direccion) and limite and puedeMover:
 		position.y += salto
 		global._on_bronze()
 		
@@ -65,3 +67,6 @@ func puedeMoverArriba(rango):
 	if position.y > rango.x and position.y < rango.y:
 		return false
 	else: return true
+	
+func anularMovimiento():
+	puedeMover = false
