@@ -35,4 +35,11 @@ func reload_gold(s):
 	
 func _on_cronometro_timeout():
 	combustible -= 50
-	$score.text = "Combustible: " + str(combustible)
+	if(combustible <= 0):
+		$score.text = "Combustible: " + "0"
+		var game_over_new = game_over.instance()
+		game_over_new.set_anchor_and_margin(MARGIN_TOP, 200 ,200)
+		get_parent().add_child(game_over_new)
+		#print("Se termino el combustible: GAME OVER!!")
+	else:
+	    $score.text = "Combustible: " + str(combustible)

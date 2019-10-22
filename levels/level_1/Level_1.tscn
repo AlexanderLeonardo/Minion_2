@@ -9,7 +9,7 @@
 [ext_resource path="res://Bloque1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Bloque1.gd" type="Script" id=8]
 [ext_resource path="res://Items/Item2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Items/Item2.gd" type="Script" id=10]
+[ext_resource path="res://Item2.gd" type="Script" id=10]
 [ext_resource path="res://theme/font_label.tres" type="DynamicFont" id=11]
 [ext_resource path="res://levels/level_1/Label.gd" type="Script" id=12]
 
@@ -52,7 +52,6 @@ script = ExtResource( 8 )
 script = ExtResource( 10 )
 
 [node name="Reloj" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="cronometro" type="Timer" parent="Reloj"]
 wait_time = 30.0
