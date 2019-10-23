@@ -49,3 +49,8 @@ func _control(delta):
 #	if position.y > 74 and position.y < 158:
 #		return false
 #	else: return true
+
+
+func _on_cronometro_timeout():
+	position.x = 140
+	position.y = 100

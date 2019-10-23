@@ -7,7 +7,7 @@
 [ext_resource path="res://Items/Item2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Item2.gd" type="Script" id=6]
 [ext_resource path="res://Items/Item4.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Items/Item4.gd" type="Script" id=8]
+[ext_resource path="res://Item4.gd" type="Script" id=8]
 [ext_resource path="res://game_ui.gd" type="Script" id=9]
 [ext_resource path="res://theme/demo_theme.tres" type="Theme" id=10]
 [ext_resource path="res://Bloque1.tscn" type="PackedScene" id=11]
@@ -40,7 +40,6 @@ position = Vector2( 195.556, 415.827 )
 script = ExtResource( 8 )
 
 [node name="UI" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="Control" type="Control" parent="UI"]
 margin_left = 214.11
@@ -61,10 +60,9 @@ position = Vector2( 291.084, 135.946 )
 script = ExtResource( 12 )
 
 [node name="Reloj" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="cronometro" type="Timer" parent="Reloj"]
-wait_time = 30.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 

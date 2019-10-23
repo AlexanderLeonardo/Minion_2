@@ -6,7 +6,7 @@
 extents = Vector2( 28.5875, 25.4927 )
 
 [node name="Item4" type="Area2D"]
-position = Vector2( 270.822, 299.777 )
+position = Vector2( 267.312, 233.136 )
 __meta__ = {
 "_edit_group_": true
 }
