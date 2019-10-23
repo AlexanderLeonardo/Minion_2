@@ -7,10 +7,12 @@ extends Node
 onready var textGaOv = preload("res://Label/GameOver.tscn")
 onready var player = $Player
 onready var tile = $TileMap
+onready var canvas = $UI/Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player.tileMap = tile
 	player.level_1 = self
+	canvas.player = player
 	# Replace with function body.
 	
 
