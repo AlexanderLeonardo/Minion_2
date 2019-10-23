@@ -56,7 +56,7 @@ margin_bottom = 5.07004
 theme = ExtResource( 10 )
 
 [node name="Bloque1" parent="." instance=ExtResource( 11 )]
-position = Vector2( 291.084, 135.946 )
+position = Vector2( -31.1601, -93.1495 )
 script = ExtResource( 12 )
 
 [node name="Reloj" type="Node2D" parent="."]
