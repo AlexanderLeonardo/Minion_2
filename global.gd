@@ -5,6 +5,7 @@ var score = 0
 signal bronze
 signal reload
 signal reload_gold
+signal reload_powerup
 
 func _ready():
 	pass # Replace with function body.
@@ -18,3 +19,6 @@ func _on_reload():
 	
 func _on_reload_gold():
 	emit_signal("reload_gold", score)
+	
+func _on_reload_power_up():
+	emit_signal("reload_powerup", score)

@@ -10,6 +10,7 @@ func _ready():
 	global.connect("bronze", self, "bronze")
 	global.connect("reload", self, "reload")
 	global.connect("reload_gold", self, "reload_gold")
+	global.connect("reload_powerup", self, "reload_powerup")
 	$score.text = "Combustible: " + str(combustible)
 	pass
 	
@@ -31,7 +32,10 @@ func reload(s):
 func reload_gold(s):
 	combustible += 50
 	$score.text = "Combustible: " + str(combustible)
-	
+
+func reload_powerup(s):
+	combustible += 200
+	$score.text = "Combustible: " + str(combustible)
 	
 func _on_cronometro_timeout():
 	combustible -= 50
