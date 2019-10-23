@@ -5,6 +5,7 @@ extends Area2D
 
 #onready var bloque_nuevo = preload("res://Bloque1.tscn")
 var tileMap
+var player
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize() 
@@ -13,8 +14,9 @@ func _on_Bloque1_body_entered(body):
 	var sizeCellX = tileMap.cell_size.x
 	var sizeCellY = tileMap.cell_size.y
 	if body.get_name() == "Player":
-		move_local_x(sizeCellX)
-		move_local_y(sizeCellY)
+		movimiento(player.movAnt, sizeCellX, sizeCellY)
+	#	move_local_x(sizeCellX)
+	#	move_local_y(sizeCellY)
 #	if body.get_name() == "Player":
 #		queue_free()
 #	var bloque_corrido = bloque_nuevo.instance()
@@ -23,3 +25,10 @@ func _on_Bloque1_body_entered(body):
 #	bloque_corrido.move_local_x(pos_nueva_x)
 #	bloque_corrido.move_local_y(pos_nueva_y)
 #	get_parent().add_child(bloque_corrido)
+
+func movimiento(posPLayer, posX, posY):
+	match posPLayer:
+		"ui_right": move_local_x(posX)
+		"ui_left": move_local_x(-posX)
+		"ui_up": move_local_y(-posY)
+		"ui_down": move_local_y(posY)

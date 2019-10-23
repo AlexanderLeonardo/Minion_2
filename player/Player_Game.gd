@@ -13,6 +13,7 @@ var alive = true
 var level_1
 var tileMap
 var puedeMover = true
+var movAnt
 
 func _ready():
 	# GunTimer.wait_time = gun_cooldown
@@ -41,11 +42,13 @@ func _physics_process(delta):
 func moverHotizontal(direccion, salto, limite):
 	if Input.is_action_just_pressed(direccion) and limite and puedeMover:
 		position.x += salto
+		movAnt = direccion
 		global._on_bronze()
 
 func moverVertical(direccion, salto, limite):
 	if Input.is_action_just_pressed(direccion) and limite and puedeMover:
 		position.y += salto
+		movAnt = direccion
 		global._on_bronze()
 		
 func puedeMoverIzq(rango):

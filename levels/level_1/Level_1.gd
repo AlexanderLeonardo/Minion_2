@@ -15,6 +15,7 @@ func _ready():
 	player.level_1 = self
 	canvas.player = player
 	bloque.tileMap = tile
+	bloque.player = player
 	# Replace with function body.
 	
 
