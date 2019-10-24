@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://levels/level_1/Level_1.gd" type="Script" id=1]
 [ext_resource path="res://floor.tres" type="TileSet" id=2]
@@ -12,8 +12,10 @@
 [ext_resource path="res://theme/demo_theme.tres" type="Theme" id=10]
 [ext_resource path="res://Bloque1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Bloque1.gd" type="Script" id=12]
-[ext_resource path="res://theme/font_label.tres" type="DynamicFont" id=13]
-[ext_resource path="res://levels/level_1/Label.gd" type="Script" id=14]
+[ext_resource path="res://Bloque2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Bloque2.gd" type="Script" id=14]
+[ext_resource path="res://theme/font_label.tres" type="DynamicFont" id=15]
+[ext_resource path="res://levels/level_1/Label.gd" type="Script" id=16]
 
 [node name="Level_1" type="Node"]
 script = ExtResource( 1 )
@@ -59,6 +61,10 @@ theme = ExtResource( 10 )
 position = Vector2( -31.1601, -93.1495 )
 script = ExtResource( 12 )
 
+[node name="Bloque2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 540.088, 187.551 )
+script = ExtResource( 14 )
+
 [node name="Reloj" type="Node2D" parent="."]
 
 [node name="cronometro" type="Timer" parent="Reloj"]
@@ -71,15 +77,16 @@ margin_left = 682.854
 margin_top = 86.9588
 margin_right = 787.854
 margin_bottom = 136.959
-custom_fonts/font = ExtResource( 13 )
+custom_fonts/font = ExtResource( 15 )
 custom_colors/font_color = Color( 0.345098, 1, 0.0784314, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.941176, 0.980392, 0.627451, 1 )
 text = "0"
 align = 1
-script = ExtResource( 14 )
+script = ExtResource( 16 )
 [connection signal="body_entered" from="Item2" to="Item2" method="_on_Item2_body_entered"]
 [connection signal="body_entered" from="Item4" to="Item4" method="_on_Item4_body_entered"]
 [connection signal="body_entered" from="Bloque1" to="Bloque1" method="_on_Bloque1_body_entered"]
-[connection signal="timeout" from="Reloj/cronometro" to="Item2" method="_on_cronometro_timeout"]
+[connection signal="area_entered" from="Bloque2" to="Bloque2" method="_on_Bloque2_area_entered"]
 [connection signal="timeout" from="Reloj/cronometro" to="UI/Control" method="_on_cronometro_timeout"]
+[connection signal="timeout" from="Reloj/cronometro" to="Item2" method="_on_cronometro_timeout"]

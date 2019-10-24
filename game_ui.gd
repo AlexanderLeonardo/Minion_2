@@ -46,6 +46,14 @@ func _on_cronometro_timeout():
 		var game_over_new = game_over.instance()
 		game_over_new.set_anchor_and_margin(MARGIN_TOP, 200 ,200)
 		get_parent().add_child(game_over_new)
+		player.anularMovimiento()
 		#print("Se termino el combustible: GAME OVER!!")
 	else:
 	    $score.text = "Combustible: " + str(combustible)
+
+
+func _on_cronometro2_timeout():
+	var game_over_new = game_over.instance()
+	game_over_new.set_anchor_and_margin(MARGIN_TOP, 200 ,200)
+	get_parent().add_child(game_over_new)
+	player.anularMovimiento()
