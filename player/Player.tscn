@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/circuloRojo.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.4898, 20.8019 )
+extents = Vector2( 21.33, 19.0002 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )

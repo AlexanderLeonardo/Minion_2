@@ -1,56 +1,53 @@
-extends "res://player/Player_game.gd"
+extends KinematicBody2D
 
+var tileMap:TileMap
+var puedeMover = true
+var movAnt
 
-func _control(delta):
-	#$Torret.look_at(global_mouse_position())
-#	var rot_dir = 0
-#	
-#	if Input.is_action_pressed("ui_right"):
-#		rot_dir += 1
-#	if Input.is_action_pressed("ui_left"):
-#		rot_dir -= 1
-#	
-#	rotation += rotation_speed * rot_dir * delta
-	velocity = Vector2()
+func _ready():
+	# GunTimer.wait_time = gun_cooldown
 	
-#	if Input.is_action_pressed("ui_up"):
-#		velocity = Vector2(speed, 1).rotated(rotation)
-#	if Input.is_action_pressed("ui_down"):
-#		velocity = Vector2(-speed/2, 1).rotated(rotation)
-#
-#	if Input.is_action_just_pressed("ui_left") and puedeMoverIzq():
-#		position.x = position.x - 116
+	pass
 	
-#	if Input.is_action_just_pressed("ui_right") and puedeMoverDer():
-#		position.x = position.x + 116
+func _physics_process(delta):
 	
-#	if Input.is_action_just_pressed("ui_down") and puedeMoverAbajo():
-#		position.y = position.y + 74
+	moverHotizontal("ui_right", 64)
+	moverHotizontal("ui_left", -64)
+	
+	moverVertical("ui_up", -64)
+	moverVertical("ui_down", 64)
 		
-#	if Input.is_action_just_pressed("ui_up") and puedeMoverArriba():
-#		position.y = position.y - 74
+func moverHotizontal(direccion, salto):
+	if Input.is_action_just_pressed(direccion) and puedeMover:
+		var sigPos = Vector2(position.x + salto, position.y)
+		tileMap.puedeMoverse(self, sigPos)
+	#	position.x += salto
+		movAnt = direccion
+		global._on_bronze()
 
-#func puedeMoverIzq():
-#	if position.x > 116 and position.x < 232:
-#		return false
-#	else: return true
+func moverVertical(direccion, salto):
+	if Input.is_action_just_pressed(direccion) and puedeMover:
+		var sigPos = Vector2(position.x, position.y + salto)
+		tileMap.puedeMoverse(self, sigPos)
+		#position.y += salto
+		movAnt = direccion
+		global._on_bronze()
+		
+func moverse(sigPos):
+	position = sigPos
 
-#func puedeMoverDer():
-#	if position.x > 695 and position.x < 811:
-#		return false
-#	else: return true
-
-#func puedeMoverAbajo():
-#	if position.y > 447 and position.y < 517:
-#		return false
-#	else: return true
+func noMoverse():
+	pass
 	
-#func puedeMoverArriba():
-#	if position.y > 74 and position.y < 158:
-#		return false
-#	else: return true
+func anularMovimiento():
+	puedeMover = false
 
-
+func revertirMovimiento():
+	match movAnt:
+		"ui_right": move_local_x(-64)
+		"ui_left": move_local_x(64)
+		"ui_up": move_local_y(64)
+		"ui_down": move_local_y(-64)
 func _on_cronometro_timeout():
 	position.x = 140
 	position.y = 100

@@ -12,4 +12,3 @@ func _on_Bloque2_area_entered(area):
 		winner_new.set_anchor_and_margin(MARGIN_TOP, 200 ,200)
 		get_parent().add_child(winner_new)
 		player.anularMovimiento()
-

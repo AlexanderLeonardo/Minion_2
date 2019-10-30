@@ -4,31 +4,26 @@ extends Area2D
 #var pos_nueva_y = 0
 
 #onready var bloque_nuevo = preload("res://Bloque1.tscn")
-var tileMap
+var tileMap:TileMap
 var player
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize() 
 
 func _on_Bloque1_body_entered(body):
-	var sizeCellX = tileMap.cell_size.x
-	var sizeCellY = tileMap.cell_size.y
 	if body.get_name() == "Player":
-		movimiento(player.movAnt, sizeCellX, sizeCellY)
-	#	move_local_x(sizeCellX)
-	#	move_local_y(sizeCellY)
-#	if body.get_name() == "Player":
-#		queue_free()
-#	var bloque_corrido = bloque_nuevo.instance()
-#	pos_nueva_x = randi() % 400 + 1
-#	pos_nueva_y = randi() % 250 + 1
-#	bloque_corrido.move_local_x(pos_nueva_x)
-#	bloque_corrido.move_local_y(pos_nueva_y)
-#	get_parent().add_child(bloque_corrido)
+		var sigPos = cellNext(player.movAnt)
+		tileMap.puedeMoverse(self, sigPos)
 
-func movimiento(posPLayer, posX, posY):
-	match posPLayer:
-		"ui_right": move_local_x(posX)
-		"ui_left": move_local_x(-posX)
-		"ui_up": move_local_y(-posY)
-		"ui_down": move_local_y(posY)
+func cellNext(posPlayer):
+	match posPlayer:
+		"ui_right": return Vector2(position.x + 64, position.y)
+		"ui_left": return Vector2(position.x - 64, position.y)
+		"ui_up": return Vector2(position.x, position.y - 64)
+		"ui_down": return Vector2(position.x, position.y + 64)
+		
+func moverse(sigPos):
+	position = sigPos
+
+func noMoverse():
+	player.revertirMovimiento()
