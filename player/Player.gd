@@ -20,21 +20,19 @@ func _physics_process(delta):
 func moverHotizontal(direccion, salto):
 	if Input.is_action_just_pressed(direccion) and puedeMover:
 		var sigPos = Vector2(position.x + salto, position.y)
-		tileMap.puedeMoverse(self, sigPos)
+		tileMap.puedeMoverse(self, sigPos,direccion)
 	#	position.x += salto
-		movAnt = direccion
-		global._on_bronze()
 
 func moverVertical(direccion, salto):
 	if Input.is_action_just_pressed(direccion) and puedeMover:
 		var sigPos = Vector2(position.x, position.y + salto)
-		tileMap.puedeMoverse(self, sigPos)
+		tileMap.puedeMoverse(self, sigPos, direccion)
 		#position.y += salto
-		movAnt = direccion
-		global._on_bronze()
 		
-func moverse(sigPos):
+func moverse(sigPos, direccion):
 	position = sigPos
+	movAnt = direccion
+	global._on_bronze()
 
 func noMoverse():
 	pass

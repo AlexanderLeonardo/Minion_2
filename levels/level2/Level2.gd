@@ -5,7 +5,8 @@ onready var tablero = $TileMap
 onready var bloque = $Bloque1
 onready var canvas = $UI/Control
 onready var meta = $Bloque2
-onready var sigLevel = preload("res://levels/level2/Level2.tscn")
+
+var sigLevel
 var work
 
 func _ready():

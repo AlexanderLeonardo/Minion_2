@@ -13,7 +13,7 @@ func _ready():
 func _on_Bloque1_body_entered(body):
 	if body.get_name() == "Player":
 		var sigPos = cellNext(player.movAnt)
-		tileMap.puedeMoverse(self, sigPos)
+		tileMap.puedeMoverse(self, sigPos,player.movAnt)
 
 func cellNext(posPlayer):
 	match posPlayer:
@@ -22,7 +22,7 @@ func cellNext(posPlayer):
 		"ui_up": return Vector2(position.x, position.y - 64)
 		"ui_down": return Vector2(position.x, position.y + 64)
 		
-func moverse(sigPos):
+func moverse(sigPos,direccion):
 	position = sigPos
 
 func noMoverse():
