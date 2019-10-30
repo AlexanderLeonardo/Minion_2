@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://levels/level1/Level1.gd" type="Script" id=1]
 [ext_resource path="res://assets/pared.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Bloque1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/level1/Control.gd" type="Script" id=8]
+[ext_resource path="res://theme/demo_theme.tres" type="Theme" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 63, 0, 63, 69, 0, 69 )
@@ -68,3 +69,10 @@ script = ExtResource( 8 )
 [node name="score" type="Label" parent="UI/Control"]
 margin_right = 123.0
 margin_bottom = 57.0
+theme = ExtResource( 9 )
+custom_colors/font_color = Color( 0.219608, 0.94902, 0.0705882, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.811765, 0.968627, 0.505882, 1 )
+text = "Pasos"
+align = 1
+valign = 1
